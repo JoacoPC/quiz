@@ -6,7 +6,7 @@ import axios from "axios";
 import SelectAutoWidth from '../Select/index';
 
 
-function Home() {
+function Home({setShowHome, setShowQuestions, setCategory, category}) {
 
     const [categories, setCategories] = useState(null);
     // const [quizes, setQuizes] = useState(null);
@@ -25,8 +25,12 @@ function Home() {
         {(categories != null && categories.length) > 0 ? (
 
         
-        <SelectAutoWidth data = {categories}>
-
+        <SelectAutoWidth data = {categories} 
+                        setShowHome = {setShowHome}
+                        setShowQuestions = {setShowQuestions}
+                        setCategory = {setCategory}
+                        category = {category}
+                        >
         </SelectAutoWidth>
         ) : (null)}
         {/* {(categories != null && categories.length) > 0 ? 
